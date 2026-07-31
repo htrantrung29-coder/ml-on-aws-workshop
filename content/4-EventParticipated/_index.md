@@ -1,44 +1,27 @@
 ---
 title: "Events Participated"
-date: 2024-01-01
+date: 2026-07-31
 weight: 4
 chapter: false
-pre: " <b> 4. </b> "
+pre: "<b>4. </b>"
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** for your report, including this warning.
-{{% /notice %}}
+During the internship at First Cloud AI Journey, I had the opportunity to participate in **1 special event**, featuring diverse project demonstrations that provided new knowledge and practical experience in solution architecture and AI application on AWS.
 
-> In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
-> 
-> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
-> * Event name
-> * Date and time
-> * Location (if applicable)
-> * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the event’s content and main activities
-> * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
-> * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
+### [Event 1](4.1-Event1/)
+&emsp;**Event Name:** Agentic AI Build Week & Solution Architecture Showcase
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+&emsp;**Time:** July 25, 2026
 
-### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+&emsp;**Location:** Bitexco Tower, 02 Hai Trieu, District 1, Ho Chi Minh City (hybrid online)
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Role:** Attendee / Learner following project demonstration sessions
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Brief Description:** The event was the showcase and demo session as part of the Agentic AI Build Week – a week-long hackathon where teams built AI-powered solutions on AWS. Featured projects included:
 
-&emsp;**Role:** Attendee  
+- **Signal Scout:** Detecting corporate strategic changes by connecting scattered data signals.
+- **Solution Architect Professional Native App:** Automating architecture design and cost estimation from natural language requirements.
+- **3KA:** An emotional hackathon journey, emphasizing teamwork and perseverance.
+- **OneTeam:** A conversational ordering solution using AI (Amazon Lex, Lambda, API Gateway).
 
----
-
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
-
-&emsp;**Date & Time:** 09:00, August 13, 2025  
-
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
-
-&emsp;**Role:** Attendee  
+&emsp;**Value Gained:** Deepened understanding of solution architecture design process, cost optimization, AI application in real business problems, and the importance of product storytelling. Learned domain-driven thinking and how to build conversational AI systems.
