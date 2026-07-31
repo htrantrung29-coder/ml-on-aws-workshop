@@ -1,126 +1,163 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Event 1: Agentic AI Build Week & Solution Architecture Showcase"
+date: 2026-07-31
 weight: 1
 chapter: false
-pre: " <b> 4.1. </b> "
+pre: "<b>4.1 </b>"
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Event Report: Agentic AI Build Week & Solution Architecture Showcase
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+## Event Overview
 
-### Event Objectives
+The event was a showcase and demo session as part of the **Agentic AI Build Week** – a week-long hackathon where teams built AI-powered solutions on AWS. Each team presented their products, shared their build journey, architecture, cost analysis, and key lessons learned.
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+## Event Objectives
 
-### Speakers
+- Showcase real-world AI solutions built on AWS in a short timeframe.
+- Share architecture design processes, cost optimization strategies, and service selection rationale.
+- Promote **Solution Architecture** and **AI-native development** mindsets.
+- Foster learning and exchange among participants and organizers.
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+## Featured Projects
 
-### Key Highlights
+### 1. Signal Scout – Detecting Corporate Strategic Changes
 
-#### Identifying the drawbacks of legacy application architecture
+**Team:** Lê Tấn Lực, Đỗ Hoàng Hiếu, Triệu Quốc Hào, Nguyễn Văn Duy Khiêm, Nguyễn Công Minh, Nguyễn Trần Minh Quân
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+**Problem:** Corporate strategy teams often struggle to detect early signals of competitive or market changes.
 
-#### Transitioning to modern application architecture – Microservices
+**Solution:** Signal Scout is a platform that connects scattered signals from corporate and market data, building a clear narrative to support strategic decisions (Maintain, Adapt, Accelerate).
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+**Architecture:** Uses AWS for data processing and AI, LangFuse for monitoring, Apify for data collection, TinyFish for analysis.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+**Key Highlight:** Focus on **transparency** and **verifiability** – every conclusion is supported by evidence.
 
-#### Domain-Driven Design (DDD)
+---
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+### 2. Solution Architect Professional Native App
 
-#### Event-Driven Architecture
+**Team:** Phạm Tiến Thuận Phát, Huỳnh Hoàng Long, Lê Minh Nghĩa, Trần Đại Vĩ, Nguyễn An
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+**Problem:** Solution architects spend too much time reading requirements, drafting architectures, drawing diagrams, and estimating costs.
 
-#### Compute Evolution
+**Solution:** An AI-native app that automates:
+- Natural language requirement analysis
+- Hybrid-cloud architecture drafting
+- Draw.io diagram generation with official AWS icons
+- AWS cost estimation for ap-southeast-1
+- Recommendations, assumptions, and gap identification
+- Refinement via chat sidebar with custom instructions
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+**Impact:** Reduces time from reading BRD/PRD to initial architecture from hours to minutes, eliminating repetitive manual work.
 
-#### Amazon Q Developer
+---
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+### 3. 3KA – Hackathon Journey
 
-### Key Takeaways
+**Team:** Huỳnh An Khương, Nguyễn Quốc Huy, Ngô Quang Khôi, Hoàng Lê Thành Đức, Đặng Nguyễn Phước Lộc, Đặng Trường Hưng
 
-#### Design Mindset
+**Story:** The presentation tells the team's emotional journey through the hackathon – from **DOUBT**, through **FLOW**, to **PRIDE** in their achievement.
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+**Key Highlight:** Emphasis on teamwork, perseverance, and adaptability when working with new technologies under time constraints.
 
-#### Technical Architecture
+---
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+### 4. OneTeam – AI-Powered Conversation Ordering
 
-#### Modernization Strategy
+**Team:** Anh Duy, Tran Dong, Doan Trung, Minh Viet, Anshul Roy
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+**The Trigger:**
+- Customers increasingly expect fast, convenient, and personalized ordering experiences.
+- Traditional ordering systems often require manual steps, causing friction and reducing user experience.
 
-### Applying to Work
+**The Problem:**
+- Current ordering processes are complex, requiring users to fill in many fields.
+- Lack of natural language understanding forces users to follow rigid structures.
+- No ability to suggest or customize based on conversation context.
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+**The Solution:**
+- **OneTeam** is an AI-powered conversational ordering solution that allows users to interact naturally.
+- The app understands and processes complex requests like modifying orders, adding items, or asking about promotions.
+- Integrates with existing backend systems for order processing, payment, and confirmation.
+- Uses AI to suggest items based on preferences and order history.
 
-### Event Experience
+**Architecture:**
+- Uses **Amazon Lex** or similar AI services for natural language processing.
+- **AWS Lambda** for business logic processing.
+- **Amazon API Gateway** as the API layer.
+- Database for order and user information storage.
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+**Key Highlight:**
+- Smooth user experience, like chatting with a real sales assistant.
+- Automates ordering process, reducing manual errors.
+- Highly scalable and customizable.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+---
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+## Key Highlights
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+| Project | Key Technologies | Core Value |
+|---------|-----------------|------------|
+| Signal Scout | AWS, LangFuse, Apify, AI/ML | Early detection, evidence-based decisions |
+| SA Professional Native App | AWS, AI, Draw.io integration | Architecture automation, time savings |
+| 3KA | AWS, Full-stack development | Hackathon spirit, teamwork |
+| OneTeam | AWS, Amazon Lex, Lambda, API Gateway | AI-powered conversational ordering, user experience |
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+---
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+## Lessons Learned
 
-#### Some event photos
-*Add your event photos here*  
+### 1. Solution Architecture Mindset
+- Always start from the **business domain**, not the technology.
+- Every architecture should include **cost estimation** and clear **assumptions**.
+- **AI-native apps** are changing how architects work.
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+### 2. Cost Optimization is Part of Architecture
+- All teams presented **Cost Analysis** sections, showing cost is a critical factor.
+- Choosing the right service (serverless vs container vs VM) significantly impacts operational costs.
+
+### 3. The Journey Matters as Much as the Result
+- Lesson from team 3KA: **perseverance** and **teamwork** are key to overcoming challenges.
+- **DOUBT → FLOW → PRIDE** is a very real emotional journey in tech projects.
+
+### 4. Applying AI to Daily Work
+- AI tools can assist from **requirement analysis** → **design** → **deployment** → **maintenance**.
+- **Amazon Q Developer** and similar tools are becoming valuable assistants for engineers and architects.
+
+### 5. AI in Customer Experience
+- OneTeam shows how AI can revolutionize how customers interact with businesses.
+- **Conversational AI** is not just a trend but becoming a user expectation.
+- Integrating AI into products improves both experience and operational efficiency.
+
+---
+
+## Applying to Work
+
+- ✅ Apply **domain-driven thinking** when designing architecture for the ML on AWS project.
+- ✅ Integrate **cost estimation** into the design process.
+- ✅ Explore **Amazon Q Developer** to accelerate development.
+- ✅ Share the learning journey to inspire teammates.
+- ✅ Research **conversational AI** applications in future products.
+
+---
+
+## Event Photos
+
+*(Insert event photos here)*
+
+![Event Photo 1](/images/events/event1-1.png)
+![Event Photo 2](/images/events/event1-2.png)
+
+---
+
+## Personal Reflection
+
+This event was a valuable opportunity to see **how real-world AI projects are built and operated on AWS**. I was particularly impressed by:
+
+- How **Signal Scout** connects scattered signals into a strategic narrative – a practical application of AI in business.
+- The **SA Professional Native App** shows how AI can completely transform a solution architect's workflow.
+- The emotional journey of team **3KA** reminded me of the value of persistence and teamwork.
+- The **OneTeam** project shows the immense potential of AI in improving customer experience – a direction I want to explore further.
+
+I realized that building a system is not just about technology, but also about **telling a story** – from the customer's problem, to the solution, to the value delivered. This is an important lesson for my development journey.
