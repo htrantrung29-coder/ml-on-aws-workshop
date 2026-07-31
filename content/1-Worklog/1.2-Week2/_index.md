@@ -9,7 +9,7 @@ pre: "<b>1.2 </b>"
 #### Tasks Done
 - Loaded Titanic dataset (891 passengers, 12 features) from GitHub.
 - Analyzed missing values: Age (177), Cabin (687), Embarked (2).
-- Due to SageMaker Processing Job quota limits, performed data processing **directly in the notebook**.
+- Due to SageMaker Processing Job quota limits, performed data processing directly in the notebook.
 - Processing steps:
   - Filled missing values: Age (median), Embarked (mode).
   - Dropped Cabin column.
