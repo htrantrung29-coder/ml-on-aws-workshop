@@ -1,18 +1,62 @@
 ---
-title : "Truy cập S3 từ VPC"
-date : 2024-01-01 
-weight : 3
-chapter : false
-pre : " <b> 5.3. </b> "
+title: "5.3 Setup môi trường"
+date: 2026-07-31
+weight: 3
+chapter: false
+pre: "<b>5.3 </b>"
 ---
 
-#### Sử dụng Gateway endpoint
+## Bước 1: Tạo IAM Role
 
-Trong phần này, bạn sẽ tạo một Gateway endpoint để truy cập Amazon S3 từ một EC2 instance. Gateway endpoint sẽ cho phép tải một object lên S3 bucket mà không cần sử dụng Internet Công cộng. Để tạo endpoint, bạn phải chỉ định VPC mà bạn muốn tạo endpoint và dịch vụ (trong trường hợp này là S3) mà bạn muốn thiết lập kết nối.
+1. Truy cập **IAM Console** → **Roles** → **Create role**.
+2. Chọn **AWS service** → **SageMaker** → **SageMaker - Execution**.
+3. Attach các policy: `AmazonSageMakerFullAccess`, `AmazonS3FullAccess`, `CloudWatchFullAccess`.
+4. Đặt tên role: `SageMakerExecutionRole`.
+5. Click **Create role**.
 
-![overview](/images/5-Workshop/5.3-S3-vpc/diagram2.png)
+## Bước 2: Tạo S3 Bucket
 
-#### Nội dung
+1. Truy cập **S3 Console** → **Create bucket**.
+2. Điền thông tin:
+   - Bucket name: `sagemaker-ap-southeast-2-921736623375`
+   - Region: `ap-southeast-2`
+3. Tạo các thư mục: `data/`, `models/`, `outputs/`, `monitoring/`, `registry/`, `pipeline/`.
 
-- [Tạo gateway endpoint](3.1-create-gwe/)
-- [Test gateway endpoint](3.2-test-gwe/)
+## Bước 3: Khởi tạo SageMaker Studio
+
+1. Truy cập **SageMaker Console** → **Studio**.
+2. Click **Set up for single user (Quick setup)**.
+3. Chọn **Execution role** là `SageMakerExecutionRole`.
+4. Click **Submit** và đợi 3-5 phút.
+
+## Bước 4: Tạo config.py
+
+Trong JupyterLab, tạo file `config.py`:
+
+```python
+import boto3
+import sagemaker
+
+session = sagemaker.Session()
+role = sagemaker.get_execution_role()
+region = boto3.Session().region_name
+bucket = "sagemaker-ap-southeast-2-921736623375"
+
+print(f"Region : {region}")
+print(f"Role : {role}")
+print(f"Bucket : {bucket}")
+Bước 5: Verify Setup
+Chạy cell sau để kiểm tra kết nối:
+
+python
+from config import session, role, region, bucket
+
+print(f"Region : {region}")
+print(f"Role : {role}")
+print(f"Bucket : {bucket}")
+Kết quả mong đợi:
+
+
+Region : ap-southeast-2
+Role : arn:aws:iam::921736623375:role/SageMakerExecutionRole
+Bucket : sagemaker-ap-southeast-2-921736623375
