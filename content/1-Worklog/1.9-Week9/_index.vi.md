@@ -1,59 +1,31 @@
 ---
-title: "Worklog Tuần 9"
-date: 2024-01-01
-weight: 1
+title: "Tuần 9: Làm lại từ đầu với tài khoản mới"
+date: 2026-07-31
+weight: 9
 chapter: false
-pre: " <b> 1.9. </b> "
+pre: "<b>1.9 </b>"
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+#### Lý do
+- Tài khoản AWS cũ bị mất (quên mật khẩu / bị khóa), không thể truy cập để hoàn thiện báo cáo và demo.
+- Quyết định tạo một tài khoản mới và làm lại toàn bộ các bước từ đầu, tập trung vào việc **không sử dụng các dịch vụ yêu cầu quota cao** (Processing Job, Training Job, Pipelines) để đảm bảo có thể chạy thành công.
 
-### Mục tiêu tuần 9:
+#### Công việc đã làm
+- Đăng ký tài khoản AWS mới (free tier).
+- Lặp lại các bước setup từ Tuần 1:
+  - Tạo IAM Role với các policy cần thiết.
+  - Tạo S3 Bucket mới, tạo các thư mục `data/`, `models/`, `outputs/`.
+  - Khởi tạo SageMaker Studio và JupyterLab.
+  - Tạo lại file `config.py` với thông tin bucket mới.
+- Chạy lại toàn bộ các notebook từ Tuần 2 → 8, điều chỉnh code để hoạt động hoàn toàn trong **local mode** (không dùng Processing Job, Training Job, Pipelines của SageMaker).
+- Kiểm tra lại kết quả và đảm bảo các số liệu khớp với lần chạy trước:
+  - Baseline accuracy: 83.80%
+  - Best accuracy: 84.92%
+  - Endpoint hoạt động, API trả về đúng dự đoán.
+- Cập nhật lại các file báo cáo trên GitHub với thông tin account mới (bucket name, region, endpoint URL).
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 9:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+#### Kết quả đạt được
+- ✅ Tài khoản mới hoạt động ổn định.
+- ✅ Tất cả các bước đều được thực hiện thành công mà không gặp lỗi quota.
+- ✅ Các số liệu accuracy và kết quả test API hoàn toàn khớp với lần chạy đầu.
+- ✅ Báo cáo được cập nhật và sẵn sàng cho demo.
