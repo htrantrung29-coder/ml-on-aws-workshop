@@ -1,46 +1,28 @@
 ---
 title: "Các events đã tham gia"
-date: 2024-01-01
+date: 2026-07-31
 weight: 4
 chapter: false
-pre: " <b> 4. </b> "
+pre: "<b>4. </b>"
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
-> 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
-> * Tên sự kiện
-> * Thời gian tổ chức
-> * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
-
-
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+Trong quá trình thực tập tại First Cloud AI Journey, em đã có cơ hội tham gia **1 sự kiện đặc biệt**, với các buổi trình diễn dự án đa dạng, mang lại nhiều kiến thức mới và trải nghiệm thực tế về kiến trúc giải pháp và ứng dụng AI trên AWS.
 
 ### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+&emsp;**Tên sự kiện:** Agentic AI Build Week & Solution Architecture Showcase
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+&emsp;**Thời gian:** 25/07/2026
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+&emsp;**Địa điểm:** Tòa nhà Bitexco, số 02 Hải Triều, phường Sài Gòn, Quận 1, Thành phố Hồ Chí Minh (kết hợp online)
 
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
+&emsp;**Vai trò trong sự kiện:** Người tham dự / Học viên theo dõi các buổi trình diễn dự án
 
+&emsp;**Mô tả ngắn:** Sự kiện là buổi tổng kết và trình diễn các dự án trong khuôn khổ Agentic AI Build Week – một chương trình hackathon kéo dài 1 tuần, nơi các nhóm tham gia xây dựng giải pháp AI trên AWS. Các dự án tiêu biểu bao gồm:
 
+- **Signal Scout:** Phát hiện thay đổi chiến lược doanh nghiệp thông qua kết nối các tín hiệu dữ liệu rời rạc.
+- **Solution Architect Professional Native App:** Tự động hóa thiết kế kiến trúc và ước tính chi phí từ yêu cầu ngôn ngữ tự nhiên.
+- **3KA:** Hành trình hackathon đầy cảm xúc, nhấn mạnh tinh thần đồng đội và kiên trì.
+- **OneTeam:** Giải pháp đặt hàng qua hội thoại sử dụng AI (Amazon Lex, Lambda, API Gateway).
 
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
-
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
-
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
+&emsp;**Giá trị đạt được:** Hiểu sâu hơn về quy trình thiết kế kiến trúc giải pháp, tối ưu chi phí, ứng dụng AI vào thực tế, và tầm quan trọng của việc kể câu chuyện sản phẩm. Học được tư duy domain-driven và cách xây dựng hệ thống conversational AI.
