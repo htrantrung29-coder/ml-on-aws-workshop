@@ -144,8 +144,6 @@ The event was a showcase and demo session as part of the **Agentic AI Build Week
 
 ## Event Photos
 
-*(Insert event photos here)*
-
 ![Event Photo 1](/static/images/event1.webp)
 ![Event Photo 2](/static/images/event2.webp)
 
