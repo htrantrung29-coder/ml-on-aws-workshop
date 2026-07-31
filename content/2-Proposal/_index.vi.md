@@ -2,56 +2,107 @@
 title: "Đề xuất dự án"
 date: 2026-07-31
 weight: 2
-chapter: true
+chapter: false
 pre: "<b>2. </b>"
 ---
 
 # Đề xuất dự án: Machine Learning on AWS
 
 ## 1. Tổng quan
-Xây dựng hệ thống Machine Learning end-to-end trên AWS với bài toán dự đoán khả năng sống sót trên tàu Titanic.
+
+Xây dựng hệ thống Machine Learning end-to-end trên AWS sử dụng Amazon SageMaker làm nền tảng chính, với bài toán dự đoán khả năng sống sót trên tàu Titanic làm use-case thực nghiệm.
 
 ## 2. Mục tiêu
-- Xây dựng data pipeline tự động.
+
+### Mục tiêu kỹ thuật
+
+- Xây dựng data pipeline tự động với SageMaker Processing Jobs.
 - Huấn luyện và tối ưu model XGBoost đạt Accuracy ≥ 83%.
-- Triển khai REST API production-ready.
+- Triển khai REST API production-ready với latency < 1 giây.
 - Thiết lập monitoring tự động phát hiện data drift.
 
+### Mục tiêu học tập
+
+- Nắm vững AWS Machine Learning Ecosystem.
+- Hiểu quy trình Machine Learning end-to-end trên AWS.
+- Thực hành các kỹ thuật MLOps.
+
+---
+
 ## 3. Vấn đề cần giải quyết
+
 | Vấn đề | Giải pháp |
-|--------|----------|
-| Deploy ML model phức tạp | SageMaker Endpoint |
+|--------|-----------|
+| Deploy ML model phức tạp | Amazon SageMaker Endpoint |
 | Không có version control model | SageMaker Model Registry |
-| Khó reproduce kết quả | SageMaker Experiments |
-| Không monitor sau deploy | CloudWatch + Model Monitor |
+| Khó tái lập kết quả | SageMaker Experiments |
+| Không giám sát sau triển khai | CloudWatch + Model Monitor |
 | Pipeline thủ công | SageMaker Pipelines |
 
-## 4. Kiến trúc giải pháp
-![Architecture](/images/architecture.png)
+---
 
-## 5. Timeline (8 tuần)
+## 4. Kiến trúc giải pháp
+
+```text
+┌──────────────────────────────────────────────┐
+│                  DATA LAYER                  │
+│      S3 (Raw) → Processing → S3 (Processed)  │
+└────────────────────┬─────────────────────────┘
+                     │
+                     ▼
+┌──────────────────────────────────────────────┐
+│               TRAINING LAYER                 │
+│ Training → Experiments → HPO → Registry      │
+└────────────────────┬─────────────────────────┘
+                     │
+                     ▼
+┌──────────────────────────────────────────────┐
+│              INFERENCE LAYER                 │
+│ Endpoint → Lambda → API Gateway → Client     │
+└────────────────────┬─────────────────────────┘
+                     │
+                     ▼
+┌──────────────────────────────────────────────┐
+│             MONITORING LAYER                 │
+│ CloudWatch + SageMaker Model Monitor         │
+└──────────────────────────────────────────────┘
+```
+
+---
+
+## 5. Timeline
+
 | Tuần | Nội dung | Deliverable |
-|------|---------|-------------|
-| 1 | Setup môi trường | IAM, S3, Studio |
+|------|----------|-------------|
+| 1 | Setup môi trường | IAM, S3, SageMaker Studio |
 | 2 | Data Processing | train.csv, test.csv |
 | 3 | Model Training | model.joblib |
-| 4 | HPO | best_model.joblib |
-| 5 | Model Registry | 2 versions |
-| 6 | Deploy + API | REST endpoint |
-| 7 | Monitoring | Alarms + Schedule |
-| 8 | Pipelines | End-to-end automation |
+| 4 | Hyperparameter Tuning | best_model.joblib |
+| 5 | Model Registry | 2 Model Versions |
+| 6 | Deploy & API | REST Endpoint |
+| 7 | Monitoring | CloudWatch Alarms |
+| 8 | Pipeline Automation | SageMaker Pipeline |
 
-## 6. Ngân sách
-| Service | Chi phí |
-|---------|---------|
-| SageMaker Endpoint | ~$0.065/h |
-| S3 Storage | ~$0.023/GB |
-| Lambda + API GW | Free tier |
+---
 
-## 7. Rủi ro & Giải pháp
-| Rủi ro | Giải pháp |
-|--------|----------|
-| Quota bị giới hạn | Train local + document |
-| Chi phí vượt budget | Xóa endpoint sau demo |
-| Endpoint bị lỗi | CloudWatch alarm + retry |
-| Data drift | Model Monitor schedule |
+## 6. Ngân sách ước tính
+
+| Dịch vụ | Đơn giá | Thời gian | Chi phí |
+|----------|---------|-----------|----------|
+| SageMaker Studio | \$0.044/giờ | 8 tuần × 4 giờ | ~\$14 |
+| SageMaker Endpoint | \$0.065/giờ | 2 tuần × 8 giờ | ~\$10 |
+| Amazon S3 | \$0.023/GB | 1 GB | ~\$0.02 |
+| Lambda + API Gateway | Free Tier | - | \$0 |
+| **Tổng** | | | **~\$24** |
+
+---
+
+## 7. Rủi ro và giải pháp
+
+| Rủi ro | Mức độ | Giải pháp |
+|--------|---------|-----------|
+| AWS Service Quota bị giới hạn | Cao | Huấn luyện cục bộ và mô phỏng kết quả |
+| Chi phí vượt ngân sách | Thấp | Xóa Endpoint sau khi hoàn thành |
+| Accuracy chưa đạt yêu cầu | Thấp | Sử dụng Hyperparameter Optimization |
+| Endpoint gặp lỗi | Trung bình | CloudWatch Alarm + Retry |
+| Data Drift | Trung bình | SageMaker Model Monitor |

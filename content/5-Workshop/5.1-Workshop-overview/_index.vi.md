@@ -33,7 +33,7 @@ Dự đoán khả năng sống sót của hành khách trên tàu Titanic dựa 
 
 Dưới đây là sơ đồ kiến trúc tổng quan của hệ thống:
 
-![Kiến trúc hệ thống](/images/architecture-diagram.png)
+![Kiến trúc hệ thống](/static/images/architecture-diagram.png)
 
 *Sơ đồ mô tả luồng dữ liệu từ S3 → Processing → Training → Endpoint → API Gateway → Client, cùng với các thành phần monitoring và governance.*
 
