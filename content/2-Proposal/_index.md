@@ -6,7 +6,7 @@ chapter: false
 pre: "<b>2. </b>"
 ---
 
-# Project Proposal: Machine Learning on AWS
+# Machine Learning on AWS
 
 ## 1. Overview
 
