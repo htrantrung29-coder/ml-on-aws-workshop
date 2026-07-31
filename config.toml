@@ -1,4 +1,4 @@
-baseURL = "https://htrantrung29-coder.github.io/ml-on-aws-workshop/"
+baseURL = "http://localhost:1313/"
 title = "Machine Learning on AWS với SageMaker"
 
 [params]

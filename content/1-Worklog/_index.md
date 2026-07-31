@@ -1,12 +1,11 @@
-## Student Information
+---
+title: "Worklog"
+date: 2026-07-31
+weight: 1
+chapter: false
+pre: "<b>1. </b>"
+---
 
-| | |
-|---|---|
-| **Full Name** | Tran Trung Hieu |
-| **Phone Number** | 0346282811 |
-| **Email** | htrantrung29@gmail.com |
-| **University** | Ho Chi Minh City University of Technology |
-| **Major** | Computer Science |
-| **Internship Company** | Amazon Web Services Viet Nam Company Limited |
-| **Internship Position** | Workforce Bootcamp - First Cloud AI Journey |
-| **Internship Duration** | From 15/06/2026 to 15/08/2026 |
+Below is the detailed weekly work log during the Machine Learning on AWS project.
+
+Click on each week to view detailed tasks and results.
