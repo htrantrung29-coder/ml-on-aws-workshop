@@ -2,5 +2,5 @@ baseURL = "https://htrantrung29-coder.github.io/ml-on-aws-workshop/"
 title = "Machine Learning on AWS với SageMaker"
 
 [params]
-  author = "<Họ tên của bạn>"
+  author = "Trần Trung Hiếu"
   description = "Xây dựng và triển khai hệ thống ML end-to-end trên AWS với SageMaker"
