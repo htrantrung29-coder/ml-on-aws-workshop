@@ -80,8 +80,8 @@ s3.upload_file("data/processed/test.csv", bucket, "data/processed/test.csv")
 print(f"Uploaded: s3://sagemaker-ap-southeast-2-921736623375/data/processed/")
 ```
 Kết quả
-Train: 712 rows, 11 columns
+- Train: 712 rows, 11 columns
 
-Test: 179 rows, 11 columns
+- Test: 179 rows, 11 columns
 
-0 missing values
+- 0 missing values
