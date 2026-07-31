@@ -1,125 +1,163 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Event 1: Agentic AI Build Week & Solution Architecture Showcase"
+date: 2026-07-31
 weight: 1
 chapter: false
-pre: " <b> 4.1. </b> "
+pre: "<b>4.1 </b>"
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo sự kiện: Agentic AI Build Week & Solution Architecture Showcase
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+## Tổng quan sự kiện
 
-### Mục Đích Của Sự Kiện
+Sự kiện là buổi tổng kết và trình diễn các dự án trong khuôn khổ **Agentic AI Build Week** – một chương trình hackathon kéo dài 1 tuần, nơi các nhóm tham gia xây dựng các giải pháp AI ứng dụng trên nền tảng AWS. Các nhóm đã trình bày sản phẩm của mình, chia sẻ quá trình xây dựng, kiến trúc, chi phí, và bài học kinh nghiệm.
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+## Mục tiêu sự kiện
 
-### Danh Sách Diễn Giả
+- Trình diễn các giải pháp AI thực tế được xây dựng trên AWS trong thời gian ngắn.
+- Chia sẻ quy trình thiết kế kiến trúc, tối ưu chi phí và lựa chọn dịch vụ.
+- Thúc đẩy tư duy **Solution Architecture** và **AI-native development**.
+- Tạo cơ hội học hỏi, trao đổi giữa các thành viên và đội ngũ tổ chức.
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+## Các dự án tiêu biểu
 
-### Nội Dung Nổi Bật
+### 1. Signal Scout – Phát hiện thay đổi chiến lược doanh nghiệp
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+**Thành viên:** Lê Tấn Lực, Đỗ Hoàng Hiếu, Triệu Quốc Hào, Nguyễn Văn Duy Khiêm, Nguyễn Công Minh, Nguyễn Trần Minh Quân
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+**Vấn đề giải quyết:** Các đội ngũ chiến lược doanh nghiệp thường khó phát hiện sớm các thay đổi từ đối thủ cạnh tranh hoặc thị trường.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+**Giải pháp:** Signal Scout là nền tảng kết nối các tín hiệu rời rạc từ dữ liệu doanh nghiệp và thị trường, xây dựng câu chuyện rõ ràng, hỗ trợ ra quyết định chiến lược (Maintain, Adapt, Accelerate).
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+**Kiến trúc:** Sử dụng AWS cho xử lý dữ liệu và AI, LangFuse để giám sát, Apify cho thu thập dữ liệu, TinyFish cho phân tích.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+**Điểm nhấn:** Tập trung vào tính **minh bạch** và **khả năng kiểm chứng** – mọi kết luận đều được hỗ trợ bằng bằng chứng.
 
-#### Domain-Driven Design (DDD)
+---
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+### 2. Solution Architect Professional Native App
 
-#### Event-Driven Architecture
+**Thành viên:** Phạm Tiến Thuận Phát, Huỳnh Hoàng Long, Lê Minh Nghĩa, Trần Đại Vĩ, Nguyễn An
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+**Vấn đề giải quyết:** Kiến trúc sư giải pháp thường mất nhiều thời gian để đọc yêu cầu, phác thảo kiến trúc, vẽ diagram và ước tính chi phí.
 
-#### Compute Evolution
+**Giải pháp:** Ứng dụng AI native giúp tự động:
+- Phân tích yêu cầu từ ngôn ngữ tự nhiên
+- Phác thảo kiến trúc hybrid-cloud
+- Tạo sơ đồ Draw.io với AWS Architecture Icons chính thức
+- Ước tính chi phí AWS cho region ap-southeast-1
+- Đưa ra khuyến nghị, giả định và xác định lỗ hổng yêu cầu
+- Tinh chỉnh qua chat sidebar với custom instructions
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+**Tác động:** Giảm thời gian từ đọc BRD/PRD → kiến trúc sơ bộ từ nhiều giờ xuống còn vài phút, loại bỏ công việc thủ công lặp lại.
 
-#### Amazon Q Developer
+---
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+### 3. 3KA – Hackathon Journey
 
-### Những Gì Học Được
+**Thành viên:** Huỳnh An Khương, Nguyễn Quốc Huy, Ngô Quang Khôi, Hoàng Lê Thành Đức, Đặng Nguyễn Phước Lộc, Đặng Trường Hưng
 
-#### Tư Duy Thiết Kế
+**Câu chuyện:** Bài thuyết trình kể lại hành trình cảm xúc của nhóm trong hackathon – từ **DOUBT** (nghi ngờ), qua **FLOW** (dòng chảy sáng tạo), đến **PRIDE** (tự hào về thành quả).
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+**Điểm nhấn:** Nhấn mạnh tinh thần đồng đội, sự kiên trì và khả năng thích ứng khi làm việc với công nghệ mới trong thời gian giới hạn.
 
-#### Kiến Trúc Kỹ Thuật
+---
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+### 4. OneTeam – AI-Powered Conversation Ordering
 
-#### Chiến Lược Hiện Đại Hóa
+**Thành viên:** Anh Duy, Trần Đông, Đoàn Trung, Minh Việt, Anshul Roy
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+**Bối cảnh (The Trigger):**
+- Khách hàng ngày càng mong đợi trải nghiệm đặt hàng nhanh chóng, tiện lợi và cá nhân hóa.
+- Các hệ thống đặt hàng truyền thống thường yêu cầu nhiều thao tác thủ công, gây mất thời gian và giảm trải nghiệm người dùng.
 
-### Ứng Dụng Vào Công Việc
+**Vấn đề (The Problem):**
+- Quy trình đặt hàng hiện tại phức tạp, yêu cầu người dùng điền nhiều thông tin.
+- Thiếu khả năng hiểu ngôn ngữ tự nhiên, khiến người dùng phải tuân theo cấu trúc cứng nhắc.
+- Không có khả năng gợi ý hoặc tùy chỉnh dựa trên ngữ cảnh hội thoại.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+**Giải pháp (The Product):**
+- **OneTeam** là giải pháp đặt hàng qua hội thoại được hỗ trợ bởi AI, cho phép người dùng tương tác bằng ngôn ngữ tự nhiên.
+- Ứng dụng hiểu và xử lý các yêu cầu phức tạp từ người dùng, như thay đổi đơn hàng, thêm món, hoặc hỏi về khuyến mãi.
+- Tích hợp với các hệ thống backend hiện có để xử lý đơn hàng, thanh toán và xác nhận.
+- Sử dụng AI để gợi ý món ăn dựa trên sở thích và lịch sử đặt hàng.
 
-### Trải nghiệm trong event
+**Kiến trúc:**
+- Sử dụng **Amazon Lex** hoặc các dịch vụ AI tương tự để xử lý ngôn ngữ tự nhiên.
+- **AWS Lambda** cho xử lý logic nghiệp vụ.
+- **Amazon API Gateway** làm lớp API.
+- Database cho lưu trữ đơn hàng và thông tin người dùng.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+**Điểm nhấn:**
+- Trải nghiệm người dùng mượt mà, giống như trò chuyện với nhân viên bán hàng thực tế.
+- Tự động hóa quy trình đặt hàng, giảm thiểu lỗi thủ công.
+- Khả năng mở rộng và tùy chỉnh cao.
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+---
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+## Điểm nổi bật
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+| Dự án | Công nghệ chính | Giá trị cốt lõi |
+|-------|----------------|----------------|
+| Signal Scout | AWS, LangFuse, Apify, AI/ML | Phát hiện sớm, ra quyết định dựa trên bằng chứng |
+| SA Professional Native App | AWS, AI, Draw.io integration | Tự động hóa kiến trúc, tiết kiệm thời gian |
+| 3KA | AWS, Full-stack development | Tinh thần hackathon, teamwork |
+| OneTeam | AWS, Amazon Lex, Lambda, API Gateway | AI-powered conversational ordering, trải nghiệm người dùng |
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+---
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+## Bài học rút ra
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+### 1. Tư duy Solution Architecture
+- Luôn bắt đầu từ **business domain**, không phải công nghệ.
+- Mỗi kiến trúc cần đi kèm với **ước tính chi phí** và **giả định** rõ ràng.
+- **AI-native apps** đang thay đổi cách kiến trúc sư làm việc.
+
+### 2. Tối ưu chi phí là một phần của kiến trúc
+- Các nhóm đều trình bày phần **Cost Analysis**, chứng tỏ chi phí là yếu tố không thể bỏ qua.
+- Lựa chọn dịch vụ phù hợp (serverless vs container vs VM) ảnh hưởng lớn đến chi phí vận hành.
+
+### 3. Hành trình quan trọng như kết quả
+- Bài học từ nhóm 3KA: sự **kiên trì** và **tinh thần đồng đội** là chìa khóa vượt qua khó khăn.
+- **DOUBT → FLOW → PRIDE** là một hành trình cảm xúc rất thực tế trong các dự án công nghệ.
+
+### 4. Ứng dụng AI vào công việc hàng ngày
+- Các công cụ AI có thể hỗ trợ đắc lực từ **phân tích yêu cầu** → **thiết kế** → **triển khai** → **bảo trì**.
+- **Amazon Q Developer** và các AI tương tự đang trở thành trợ thủ đắc lực cho kỹ sư và kiến trúc sư.
+
+### 5. AI trong trải nghiệm khách hàng
+- Dự án OneTeam cho thấy AI có thể cách mạng hóa cách khách hàng tương tác với doanh nghiệp.
+- **Conversational AI** không chỉ là xu hướng mà đang trở thành kỳ vọng của người dùng.
+- Tích hợp AI vào sản phẩm giúp tăng trải nghiệm và hiệu quả vận hành.
+
+---
+
+## Áp dụng vào công việc
+
+- ✅ Sử dụng tư duy **domain-driven** khi thiết kế kiến trúc cho dự án ML on AWS.
+- ✅ Tích hợp **cost estimation** vào quy trình thiết kế.
+- ✅ Khám phá **Amazon Q Developer** để tăng tốc độ phát triển.
+- ✅ Đúc kết và chia sẻ hành trình học tập để truyền cảm hứng cho đồng đội.
+- ✅ Nghiên cứu ứng dụng **conversational AI** trong các sản phẩm tương lai.
+
+---
+
+## Hình ảnh sự kiện
+
+*(Chèn ảnh tham gia sự kiện tại đây)*
+
+![Event Photo 1](/images/events/event1-1.png)
+![Event Photo 2](/images/events/event1-2.png)
+
+---
+
+## Cảm nhận cá nhân
+
+Sự kiện này là cơ hội quý giá để nhìn thấy **cách các dự án AI thực tế được xây dựng và vận hành trên AWS**. Tôi đặc biệt ấn tượng với:
+
+- Cách **Signal Scout** kết nối các tín hiệu rời rạc thành câu chuyện chiến lược – một ứng dụng thực tế của AI vào kinh doanh.
+- Ứng dụng **SA Professional Native App** cho thấy AI có thể thay đổi hoàn toàn workflow của một kiến trúc sư giải pháp.
+- Hành trình cảm xúc của nhóm **3KA** nhắc nhở tôi về giá trị của sự bền bỉ và tinh thần đồng đội.
+- Dự án **OneTeam** cho thấy tiềm năng to lớn của AI trong việc cải thiện trải nghiệm khách hàng – một hướng đi mà tôi muốn khám phá thêm.
+
+Tôi nhận ra rằng việc xây dựng một hệ thống không chỉ là kỹ thuật, mà còn là **kể một câu chuyện** – từ vấn đề của khách hàng, đến giải pháp, đến giá trị mang lại. Đây là bài học quan trọng cho hành trình phát triển của tôi.
