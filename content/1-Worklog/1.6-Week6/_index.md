@@ -7,16 +7,16 @@ pre: "<b>1.6 </b>"
 ---
 
 #### Tasks Done
-- Wrote `inference.py` (with `model_fn`, `input_fn`, `predict_fn`, `output_fn`).
-- Wrote `requirements.txt` (xgboost).
-- Converted model to XGBoost native, packaged as `model.tar.gz`, uploaded to S3 (`models/`).
-- Deployed SageMaker Endpoint with `ml.t2.medium` instance, enabled Data Capture.
-- Created Lambda Function `titanic-predictor` (Python 3.12) to wrap Endpoint.
-- Created API Gateway `titanic-api` with `POST /predict` method, integrated with Lambda.
+- Wrote inference.py (with model_fn, input_fn, predict_fn, output_fn).
+- Wrote requirements.txt (xgboost).
+- Converted model to XGBoost native, packaged as model.tar.gz, uploaded to S3 (models/).
+- Deployed SageMaker Endpoint with ml.t2.medium instance, enabled Data Capture.
+- Created Lambda Function titanic-predictor (Python 3.12) to wrap Endpoint.
+- Created API Gateway titanic-api with POST /predict method, integrated with Lambda.
 - Tested API with 3 passenger scenarios.
 
 #### Results
-- ✅ Endpoint `titanic-survival-endpoint` in `InService` state.
+- ✅ Endpoint titanic-survival-endpoint in InService state.
 - ✅ Lambda Function working.
 - ✅ API Gateway returns correct JSON.
 - ✅ Test results:
