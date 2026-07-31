@@ -1,59 +1,25 @@
 ---
-title: "Worklog Tuần 2"
-date: 2024-01-01
-weight: 1
+title: "Tuần 2: Xử lý dữ liệu (Data Processing) – Local mode"
+date: 2026-07-31
+weight: 2
 chapter: false
-pre: " <b> 1.2. </b> "
+pre: "<b>1.2 </b>"
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+#### Công việc đã làm
+- Tải dataset Titanic (891 hành khách, 12 features) từ GitHub.
+- Phân tích missing values: `Age` (177), `Cabin` (687), `Embarked` (2).
+- Do quota SageMaker Processing Job bị giới hạn, thực hiện xử lý dữ liệu **trực tiếp trong notebook**.
+- Các bước xử lý:
+  - Điền missing values: `Age` (median), `Embarked` (mode).
+  - Loại bỏ cột `Cabin`.
+  - Feature Engineering: tạo `FamilySize`, `IsAlone`, trích xuất `Title` từ họ tên.
+  - Encoding: `Sex` (0/1), `Embarked` (S/C/Q → 0/1/2), `Title` (Mr/Miss/Mrs/Master/Rare → 0-4).
+  - Chọn 10 features và target `Survived`.
+  - Chia Train/Test 80/20 (có stratify).
+- Lưu `train.csv` và `test.csv`, upload lên S3 (`data/processed/`).
 
-### Mục tiêu tuần 2:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 2:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+#### Kết quả đạt được
+- ✅ Train: 712 rows, 11 columns; Test: 179 rows, 11 columns.
+- ✅ 0 missing values.
+- ✅ Upload thành công lên S3.
