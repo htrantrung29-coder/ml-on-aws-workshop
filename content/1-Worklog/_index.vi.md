@@ -1,12 +1,12 @@
-## Student Information
+## Thông tin sinh viên
 
 | | |
 |---|---|
-| **Full Name** |Tran Trung Hieu |
-| **Phone Number** | 0346282811 |
+| **Họ tên** | Trần Trung Hiếu |
+| **Số điện thoại** | 0346282811 |
 | **Email** | htrantrung29@gmail.com |
-| **University** | Ho Chi Minh City University of Technology and Education |
-| **Major** | Information Technology |
-| **Internship Company** | Amazon Web Services Viet Nam Company Limited |
-| **Internship Position** | Workforce Bootcamp - First Cloud AI Journey |
-| **Internship Duration** | From 15/06/2026 to 15/18/2026 |
+| **Trường** | Trường Đại học Bách Khoa Thành phố Hồ Chí Minh |
+| **Chuyên ngành** | Khoa học máy tính |
+| **Công ty thực tập** | Công ty TNHH Amazon Web Services Việt Nam |
+| **Vị trí thực tập** | Workforce Bootcamp - First Cloud AI Journey |
+| **Thời gian thực tập** | Từ 15/06/2026 đến 15/08/2026 |
