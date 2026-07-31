@@ -41,13 +41,13 @@ Dưới đây là sơ đồ kiến trúc tổng quan của hệ thống:
 
 | Thành phần | Vai trò |
 |------------|---------|
-| **Amazon S3** | Lưu trữ dữ liệu thô, dữ liệu đã xử lý, và model artifacts |
+| **Amazon S3** (`sagemaker-ap-southeast-2-921736623375`) | Lưu trữ dữ liệu thô, dữ liệu đã xử lý, và model artifacts |
 | **SageMaker Studio** | Môi trường phát triển JupyterLab |
 | **SageMaker Processing** | Xử lý và biến đổi dữ liệu (local mode trong workshop này) |
 | **SageMaker Training** | Huấn luyện mô hình XGBoost (local mode) |
-| **SageMaker Endpoint** | Real-time inference |
+| **SageMaker Endpoint** | Real-time inference (`titanic-survival-endpoint`) |
 | **AWS Lambda** | Wrapper gọi endpoint, xử lý request/response |
-| **API Gateway** | REST API endpoint `/predict` |
+| **API Gateway** | REST API endpoint `/predict` (`https://41zys98x41.execute-api.ap-southeast-2.amazonaws.com/prod/predict`) |
 | **CloudWatch** | Logs, metrics, và alarms |
 | **SageMaker Model Registry** | Quản lý phiên bản mô hình (thủ công) |
 | **IAM** | Quản lý quyền truy cập |
