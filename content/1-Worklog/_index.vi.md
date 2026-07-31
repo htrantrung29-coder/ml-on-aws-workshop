@@ -1,40 +1,36 @@
 ---
-title: "Nhật ký công việc"
-date: 2024-01-01
-weight: 1
+title: "Tuần 9: Làm lại dự án với account mới (không dùng quota)"
+date: 2026-07-31
+weight: 9
 chapter: false
-pre: " <b> 1. </b> "
+pre: "<b>1.9 </b>"
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+#### Lý do
+- Tài khoản AWS cũ bị mất quyền truy cập, không thể tiếp tục.
+- Quyết định tạo account mới và làm lại toàn bộ dự án từ đầu.
+- Thách thức: account mới vẫn là tài khoản sinh viên, không có quota cho SageMaker Training Job và Model Registry.
 
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
+#### Công việc đã làm
+- Tạo account AWS mới, thiết lập IAM, S3 bucket, SageMaker Studio.
+- Clone lại toàn bộ code từ repo GitHub (config.py, preprocessing.py, train.py, inference.py, notebooks).
+- Điều chỉnh code để **không sử dụng bất kỳ service nào yêu cầu quota cao**:
+  - **Processing Job** → thay bằng xử lý dữ liệu local trong notebook.
+  - **Training Job** → thay bằng huấn luyện local (vẫn dùng XGBoost).
+  - **Model Registry** → thay bằng lưu metadata JSON trên S3.
+  - **SageMaker Pipelines** → thay bằng Python function tự động hóa.
+- Vẫn giữ nguyên các service có quota mặc định: Endpoint (`ml.t2.medium`), CloudWatch, Lambda, API Gateway.
+- Chạy lại toàn bộ pipeline từ Week 1 đến Week 8 và xác nhận kết quả tương đương.
 
+#### Kết quả đạt được
+- ✅ Toàn bộ dự án được tái tạo thành công trên account mới.
+- ✅ Accuracy vẫn đạt **84.92%**.
+- ✅ Endpoint `titanic-survival-endpoint` hoạt động.
+- ✅ API Gateway và Lambda vận hành bình thường.
+- ✅ Tất cả artifacts được lưu trên S3.
+- ✅ Quy trình không phụ thuộc vào quota đặc biệt, có thể tái sử dụng cho bất kỳ account sinh viên nào.
 
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
-
-**Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
-
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
-
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
-
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
-
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
-
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
-
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
-
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
-
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
-
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
-
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
-
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+#### Bài học rút ra
+- Luôn backup code và tài liệu lên GitHub để có thể khôi phục nhanh chóng.
+- Khi bị giới hạn quota, cần linh hoạt chuyển sang các phương án thay thế (local execution, lưu metadata JSON, ...).
+- Việc làm lại từ đầu giúp hiểu sâu hơn từng bước và tối ưu hóa quy trình.
