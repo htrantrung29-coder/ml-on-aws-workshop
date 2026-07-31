@@ -1,31 +1,58 @@
 ---
-title: "Workshop"
-date: 2024-01-01
-weight: 5
-chapter: false
-pre: " <b> 5. </b> "
+title: "Self Evaluation"
+date: 2026-07-31
+weight: 6
+chapter: true
+pre: "<b>6. </b>"
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Self Evaluation
 
-#### Overview
+Below is my self-evaluation during the internship and the Machine Learning on AWS project. The criteria are assessed based on task completion, adaptability, and contribution to the overall project.
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+## Evaluation Table
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+| Criteria | Rating | Comments |
+|----------|--------|----------|
+| **Knowledge** | **Good** | Solid understanding of core AWS services like SageMaker, S3, Lambda, and API Gateway. Understands end-to-end ML workflow. Needs to explore advanced MLOps practices and SageMaker Feature Store further. |
+| **Learning Ability** | **Excellent** | Self-studied AWS documentation, debugged technical issues (quota, health check, container). Quickly adapted to resource constraints and found appropriate workarounds. |
+| **Proactiveness** | **Good** | Proactively researched new services and proposed solutions when encountering problems. Occasionally needed guidance for complex IAM and networking issues. |
+| **Discipline** | **Excellent** | Completed the 8-week schedule on time, maintained detailed worklog and reports. Demonstrated a serious work ethic with clear planning. |
+| **Communication** | **Good** | Reported progress regularly, asked clear and coherent questions when facing issues. Able to synthesize and present results logically. |
+| **Teamwork** | **Average** | Since this was an individual project, teamwork skills weren't fully demonstrated. However, assisted peers facing similar AWS setup challenges. |
+| **Problem Solving** | **Excellent** | Encountered various real-world errors (quota, endpoint health check, Model Registry limit) and resolved them with appropriate solutions or workarounds. Skilled at log analysis and root cause identification. |
+| **Contribution to Project** | **Good** | Completed all 8 weeks as required. Built an end-to-end ML system with 84.92% accuracy. Produced a detailed report with complete code and instructions for replication. |
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+## Challenges and Solutions
 
-#### Content
+### 1. SageMaker Quota Limits
+**Problem:** The student account had quota limits for Training Jobs, Processing Jobs, Model Registry, and Pipelines.
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+**Solution:**
+- Ran training and processing directly in JupyterLab (local mode).
+- Managed model versions manually using JSON files instead of Model Registry.
+- Built a Python function as a pipeline replacement instead of SageMaker Pipelines.
+
+**Lesson:** Always check quotas before starting and have a Plan B for limitations.
+
+### 2. Endpoint Health Check Failure
+**Problem:** The SKLearn container didn't have the `xgboost` library pre-installed, causing endpoint health check failure.
+
+**Solution:** Switched to the official AWS XGBoost container instead of the SKLearn container.
+
+**Lesson:** Always check CloudWatch logs and choose the correct container for your framework.
+
+### 3. Lost Old AWS Account
+**Problem:** Lost access to the previous AWS account, unable to finalize the report and demo.
+
+**Solution:** Created a new account and re-ran all steps from scratch, adjusting code to avoid high-quota services.
+
+**Lesson:** Always back up code and documentation. Use IAM users instead of the root user.
+
+## Future Development Directions
+
+- 🔜 Experiment with larger datasets (> 100K rows) to evaluate scalability.
+- 🔜 Integrate CI/CD with GitHub Actions for automated model deployment on changes.
+- 🔜 Implement A/B testing with multiple model variants on the same endpoint.
+- 🔜 Explore SageMaker Feature Store for centralized feature management.
+- 🔜 Deploy multi-region for high availability and lower latency.
