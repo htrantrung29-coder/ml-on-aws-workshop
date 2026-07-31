@@ -1,18 +1,69 @@
 ---
-title : "Access S3 from VPC"
-date : 2024-01-01
-weight : 3
-chapter : false
-pre : " <b> 5.3. </b> "
+title: "5.3 Environment Setup"
+date: 2026-07-31
+weight: 3
+chapter: false
+pre: "<b>5.3 </b>"
 ---
 
-#### Using Gateway endpoint
+## Step 1: Create IAM Role
 
-In this section, you will create **a Gateway eendpoint** to access **Amazon S3** from **an EC2 instance**. **The Gateway endpoint** will allow upload an object to S3 buckets without using **the Public Internet**. To create an endpoint, you must specify the VPC in which you want to create the endpoint, and the service (in this case, S3) to which you want to establish the connection.
+1. Go to **IAM Console** $\rightarrow$ **Roles** $\rightarrow$ **Create role**.
+2. Choose **AWS service** $\rightarrow$ **SageMaker** $\rightarrow$ **SageMaker - Execution**.
+3. Attach policies: `AmazonSageMakerFullAccess`, `AmazonS3FullAccess`, `CloudWatchFullAccess`.
+4. Name: `SageMakerExecutionRole`.
+5. Click **Create role**.
 
-![overview](/images/5-Workshop/5.3-S3-vpc/diagram2.png)
+---
 
-#### Content
+## Step 2: Create S3 Bucket
 
-- [Create gateway endpoint](3.1-create-gwe/)
-- [Test gateway endpoint](3.2-test-gwe/)
+1. Go to **S3 Console** $\rightarrow$ **Create bucket**.
+2. Fill in:
+   - **Bucket name:** `sagemaker-ap-southeast-2-921736623375`
+   - **Region:** `ap-southeast-2`
+3. Create folders: `data/`, `models/`, `outputs/`, `monitoring/`, `registry/`, `pipeline/`.
+
+---
+
+## Step 3: Launch SageMaker Studio
+
+1. Go to **SageMaker Console** $\rightarrow$ **Studio**.
+2. Click **Set up for single user (Quick setup)**.
+3. Select **Execution role** as `SageMakerExecutionRole`.
+4. Click **Submit** and wait 3-5 minutes.
+
+---
+
+## Step 4: Create config.py
+
+In JupyterLab, create file `config.py`:
+
+```python
+import boto3
+import sagemaker
+
+session = sagemaker.Session()
+role = sagemaker.get_execution_role()
+region = boto3.Session().region_name
+bucket = "sagemaker-ap-southeast-2-921736623375"
+
+print(f"Region : {region}")
+print(f"Role : {role}")
+print(f"Bucket : {bucket}")
+```
+Step 5: Verify Setup
+Run the following cell to check the connection:
+
+```
+from config import session, role, region, bucket
+
+print(f"Region : {region}")
+print(f"Role : {role}")
+print(f"Bucket : {bucket}")
+```
+Expected output:
+```
+Region : ap-southeast-2
+Role : arn:aws:iam::921736623375:role/SageMakerExecutionRole
+Bucket : sagemaker-ap-southeast-2-921736623375
