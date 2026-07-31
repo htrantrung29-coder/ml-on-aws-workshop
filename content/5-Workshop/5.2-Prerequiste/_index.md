@@ -9,7 +9,7 @@ pre: "<b>5.2 </b>"
 ## AWS Account
 
 - AWS account (Free Tier or student account is acceptable).
-- Recommended region: `ap-southeast-2` (Sydney), but you can use other regions.
+- Region: `ap-southeast-2` (Sydney).
 
 ## Minimum IAM Permissions
 
@@ -39,8 +39,8 @@ Create an IAM Role with the following policies:
 
 ## Folder Structure
 
-Create the following folder structure in your S3 bucket:
-s3://<bucket-name>/
+Create the following folder structure in S3 bucket `sagemaker-ap-southeast-2-921736623375`:
+s3://sagemaker-ap-southeast-2-921736623375/
 ├── data/
 │ ├── raw/ # Raw data
 │ └── processed/ # Processed data
@@ -52,7 +52,6 @@ s3://<bucket-name>/
 ├── registry/ # Model registry metadata
 └── pipeline/ # Pipeline artifacts
 
-text
 
 ## Quota Considerations
 
