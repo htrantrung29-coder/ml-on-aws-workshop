@@ -7,16 +7,16 @@ pre: "<b>1.6 </b>"
 ---
 
 #### Công việc đã làm
-- Viết `inference.py` (các hàm `model_fn`, `input_fn`, `predict_fn`, `output_fn`).
-- Viết `requirements.txt` (xgboost).
-- Chuyển model sang XGBoost native, đóng gói thành `model.tar.gz` và upload lên S3 (`models/`).
-- Triển khai SageMaker Endpoint với instance `ml.t2.medium`, bật Data Capture.
-- Tạo Lambda Function `titanic-predictor` (Python 3.12) wrapper gọi Endpoint.
-- Tạo API Gateway `titanic-api` với method `POST /predict`, tích hợp Lambda.
+- Viết inference.py (các hàm model_fn, input_fn, predict_fn, output_fn).
+- Viết requirements.txt (xgboost).
+- Chuyển model sang XGBoost native, đóng gói thành model.tar.gz và upload lên S3 (models/).
+- Triển khai SageMaker Endpoint với instance ml.t2.medium, bật Data Capture.
+- Tạo Lambda Function titanic-predictor (Python 3.12) wrapper gọi Endpoint.
+- Tạo API Gateway titanic-api với method POST /predict, tích hợp Lambda.
 - Test API với 3 kịch bản hành khách.
 
 #### Kết quả đạt được
-- ✅ Endpoint `titanic-survival-endpoint` ở trạng thái `InService`.
+- ✅ Endpoint titanic-survival-endpoint ở trạng thái InService.
 - ✅ Lambda Function hoạt động.
 - ✅ API Gateway trả về JSON chính xác.
 - ✅ Kết quả test:
