@@ -16,10 +16,10 @@ pre: "<b>1.4 </b>"
   - max_depth = 3
   - n_estimators = 100
   - learning_rate = 0.01
-- Retrained with best params, achieved **84.92%** accuracy.
+- Retrained with best params, achieved 84.92% accuracy.
 - Saved best_model.joblib to S3 (models/).
 - Logged HPO results to SageMaker Experiments (titanic-hpo).
 
 #### Results
-- ✅ Best Accuracy: **84.92%** (+1.12% improvement over baseline).
+- ✅ Best Accuracy: 84.92% (+1.12% improvement over baseline).
 - ✅ Optimal hyperparameters selected.
