@@ -9,7 +9,7 @@ pre: "<b>1.2 </b>"
 #### Công việc đã làm
 - Tải dataset Titanic (891 hành khách, 12 features) từ GitHub.
 - Phân tích missing values: Age (177), Cabin (687), Embarked (2).
-- Do quota SageMaker Processing Job bị giới hạn, thực hiện xử lý dữ liệu **trực tiếp trong notebook**.
+- Do quota SageMaker Processing Job bị giới hạn, thực hiện xử lý dữ liệu trực tiếp trong notebook.
 - Các bước xử lý:
   - Điền missing values: Age (median), Embarked (mode).
   - Loại bỏ cột Cabin.
