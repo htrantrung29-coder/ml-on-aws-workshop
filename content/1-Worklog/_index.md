@@ -1,39 +1,36 @@
 ---
-title: "Worklog"
-date: 2024-01-01
-weight: 1
+title: "Week 9: Rebuild Project with New Account (No Quota)"
+date: 2026-07-31
+weight: 9
 chapter: false
-pre: " <b> 1. </b> "
+pre: "<b>1.9 </b>"
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+#### Reason
+- The old AWS account lost access, preventing continuation.
+- Decision to create a new account and rebuild the entire project from scratch.
+- Challenge: the new account is still a student account, with no quota for SageMaker Training Job and Model Registry.
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+#### Tasks Done
+- Created a new AWS account, set up IAM, S3 bucket, SageMaker Studio.
+- Cloned all code from GitHub repo (`config.py`, `preprocessing.py`, `train.py`, `inference.py`, notebooks).
+- Modified code to **avoid using any high-quota services**:
+  - **Processing Job** → replaced with local data processing in notebook.
+  - **Training Job** → replaced with local training (XGBoost still used).
+  - **Model Registry** → replaced with JSON metadata stored on S3.
+  - **SageMaker Pipelines** → replaced with Python automation function.
+- Retained services with default quotas: Endpoint (`ml.t2.medium`), CloudWatch, Lambda, API Gateway.
+- Re-ran the entire pipeline from Week 1 to Week 8 and verified equivalent results.
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+#### Results
+- ✅ Entire project recreated successfully on new account.
+- ✅ Accuracy still reached **84.92%**.
+- ✅ Endpoint `titanic-survival-endpoint` is live.
+- ✅ API Gateway and Lambda work normally.
+- ✅ All artifacts saved on S3.
+- ✅ Workflow no longer depends on special quotas, reusable for any student account.
 
-**Week 1:** [Getting familiar with AWS and basic AWS services](1.1-week1/)
-
-**Week 2:** [Doing task A...](1.2-week2/)
-
-**Week 3:** [Doing task B...](1.3-week3/)
-
-**Week 4:** [Doing task C...](1.4-week4/)
-
-**Week 5:** [Doing task D...](1.5-week5/)
-
-**Week 6:** [Doing task E...](1.6-week6/)
-
-**Week 7:** [Doing task G...](1.7-week7/)
-
-**Week 8:** [Doing task H...](1.8-week8/)
-
-**Week 9:** [Doing task I...](1.9-week9/)
-
-**Week 10:** [Doing task L...](1.10-week10/)
-
-**Week 11:** [Doing task M...](1.11-week11/)
-
-**Week 12:** [Doing task N...](1.12-week12/)
+#### Lessons Learned
+- Always back up code and documentation to GitHub for quick recovery.
+- When quota is limited, be flexible with alternative solutions (local execution, JSON metadata, etc.).
+- Rebuilding from scratch deepens understanding of each step and helps optimize the process.
