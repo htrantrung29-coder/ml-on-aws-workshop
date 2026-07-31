@@ -6,7 +6,7 @@ chapter: false
 pre: "<b>4.1 </b>"
 ---
 
-# Event Report: Agentic AI Build Week & Solution Architecture Showcase
+# Event Report
 
 ## Event Overview
 
