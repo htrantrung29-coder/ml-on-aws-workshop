@@ -1,28 +1,95 @@
 ---
-title : "Clean up"
-date : 2024-01-01
-weight : 6
-chapter : false
-pre : " <b> 5.6. </b> "
+title: "5.6 Model Registry"
+date: 2026-07-31
+weight: 6
+chapter: false
+pre: "<b>5.6 </b>"
 ---
-Congratulations on completing this workshop! 
-In this workshop, you learned architecture patterns for accessing Amazon S3 without using the Public Internet. 
-+ By creating a gateway endpoint, you enabled direct communication between EC2 resources and Amazon S3, without traversing an Internet Gateway. 
-+ By creating an interface endpoint you extended S3 connectivity to resources running in your on-premises data center via AWS Site-to-Site VPN or Direct Connect. 
 
-#### clean up
-1. Navigate to Hosted Zones on the left side of Route 53 console. Click the name of *s3.us-east-1.amazonaws.com* zone. Click Delete and confirm deletion by typing delete. 
+## Introduction
 
+Due to SageMaker Model Registry quota limits, we manage model versions manually using a JSON file.
 
-2. Disassociate the Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+## Create model_registry.json
 
+```json
+{
+  "model_group": "titanic-survival-models",
+  "versions": [
+    {
+      "version": 1,
+      "status": "approved",
+      "model_name": "HPO Best",
+      "accuracy": 0.8492,
+      "max_depth": 3,
+      "n_estimators": 100,
+      "learning_rate": 0.01,
+      "s3_path": "s3://sagemaker-ap-southeast-2-921736623375/models/best_model.joblib",
+      "created_at": "2026-07-31"
+    },
+    {
+      "version": 2,
+      "status": "rejected",
+      "model_name": "Baseline",
+      "accuracy": 0.8380,
+      "max_depth": 5,
+      "n_estimators": 100,
+      "learning_rate": 0.1,
+      "s3_path": "s3://sagemaker-ap-southeast-2-921736623375/models/model.joblib",
+      "created_at": "2026-07-30"
+    }
+  ]
+}
+```
 
-4. Open the CloudFormation console  and delete the two CloudFormation Stacks that you created for this lab:
-+ PLOnpremSetup
-+ PLCloudSetup
+## Upload to S3
 
+```python
+import json
+import boto3
+from config import bucket
 
-5. Delete S3 buckets
-+ Open S3 console
-+ Choose the bucket we created for the lab, click and confirm empty. Click delete and confirm delete.
+registry_data = {
+    "model_group": "titanic-survival-models",
+    "versions": [
+        {
+            "version": 1,
+            "status": "approved",
+            "model_name": "HPO Best",
+            "accuracy": 0.8492,
+            "max_depth": 3,
+            "n_estimators": 100,
+            "learning_rate": 0.01,
+            "s3_path": f"s3://{bucket}/models/best_model.joblib",
+            "created_at": "2026-07-31"
+        },
+        {
+            "version": 2,
+            "status": "rejected",
+            "model_name": "Baseline",
+            "accuracy": 0.8380,
+            "max_depth": 5,
+            "n_estimators": 100,
+            "learning_rate": 0.1,
+            "s3_path": f"s3://{bucket}/models/model.joblib",
+            "created_at": "2026-07-30"
+        }
+    ]
+}
 
+with open("model_registry.json", "w") as f:
+    json.dump(registry_data, f, indent=2)
+
+s3 = boto3.client("s3")
+s3.upload_file("model_registry.json", bucket, "registry/model_registry.json")
+print(f"Uploaded: s3://{bucket}/registry/model_registry.json")
+```
+
+## Results
+
+| Version | Model | Accuracy | Status |
+|---------|-------|----------|--------|
+| v1 | HPO Best | 84.92% | Approved |
+| v2 | Baseline | 83.80% | Rejected |
+
+---
