@@ -37,21 +37,17 @@ Create an IAM Role with the following policies:
 | Python | 3.12+ | Run code and notebooks |
 | Git | Latest | Source code management |
 
-## Folder Structure
+## S3 Folder Structure
 
-Create the following folder structure in S3 bucket `sagemaker-ap-southeast-2-921736623375`:
-s3://sagemaker-ap-southeast-2-921736623375/
-├── data/
-│ ├── raw/ # Raw data
-│ └── processed/ # Processed data
-├── models/ # Model artifacts
-├── outputs/ # Job outputs
-├── monitoring/ # Baseline and reports
-│ ├── baseline/
-│ └── captured-data/
-├── registry/ # Model registry metadata
-└── pipeline/ # Pipeline artifacts
-
+Create the following folders in S3 bucket `sagemaker-ap-southeast-2-921736623375`:
+- `data/raw/` : raw data
+- `data/processed/` : processed data
+- `models/` : model artifacts
+- `outputs/` : job outputs
+- `monitoring/baseline/` : baseline files
+- `monitoring/captured-data/` : data capture
+- `registry/` : model registry metadata
+- `pipeline/` : pipeline artifacts
 
 ## Quota Considerations
 
