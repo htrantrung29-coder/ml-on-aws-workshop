@@ -33,7 +33,7 @@ Predict the survival probability of passengers on the Titanic based on features 
 
 Below is the overall architecture diagram of the system:
 
-![System Architecture](/static/images/architecture-diagram.png)
+![System Architecture](/images/architecture-diagram.png)
 
 *The diagram illustrates the data flow from S3 → Processing → Training → Endpoint → API Gateway → Client, along with monitoring and governance components.*
 
