@@ -9,7 +9,7 @@ pre: "<b>5.2 </b>"
 ## Tài khoản AWS
 
 - Tài khoản AWS (có thể sử dụng Free Tier hoặc tài khoản sinh viên).
-- Region: `ap-southeast-2` (Sydney) được khuyến nghị, nhưng bạn có thể dùng region khác.
+- Region: `ap-southeast-2` (Sydney).
 
 ## Quyền IAM tối thiểu
 
@@ -39,21 +39,4 @@ Tạo IAM Role với các policy sau:
 
 ## Cấu trúc thư mục
 
-Tạo cấu trúc thư mục sau trong S3 bucket:
-s3://<bucket-name>/
-├── data/
-│ ├── raw/ # Dữ liệu thô
-│ └── processed/ # Dữ liệu đã xử lý
-├── models/ # Model artifacts
-├── outputs/ # Output từ các job
-├── monitoring/ # Baseline và reports
-│ ├── baseline/
-│ └── captured-data/
-├── registry/ # Model registry metadata
-└── pipeline/ # Pipeline artifacts
-
-text
-
-## Lưu ý về quota
-
-Do tài khoản sinh viên thường bị giới hạn quota, workshop này sử dụng **local mode** (chạy trong notebook) thay vì SageMaker Processing Jobs và Training Jobs. Các bước vẫn đảm bảo tính tương đương về kết quả.
+Tạo cấu trúc thư mục sau trong S3 bucket `sagemaker-ap-southeast-2-921736623375`:
