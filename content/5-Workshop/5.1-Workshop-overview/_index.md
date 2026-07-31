@@ -41,13 +41,13 @@ Below is the overall architecture diagram of the system:
 
 | Component | Role |
 |-----------|------|
-| **Amazon S3** | Stores raw data, processed data, and model artifacts |
+| **Amazon S3** (`sagemaker-ap-southeast-2-921736623375`) | Stores raw data, processed data, and model artifacts |
 | **SageMaker Studio** | JupyterLab development environment |
 | **SageMaker Processing** | Data processing and transformation (local mode in this workshop) |
 | **SageMaker Training** | XGBoost model training (local mode) |
-| **SageMaker Endpoint** | Real-time inference |
+| **SageMaker Endpoint** | Real-time inference (`titanic-survival-endpoint`) |
 | **AWS Lambda** | Wrapper to call endpoint, handle request/response |
-| **API Gateway** | REST API endpoint `/predict` |
+| **API Gateway** | REST API endpoint `/predict` (`https://41zys98x41.execute-api.ap-southeast-2.amazonaws.com/prod/predict`) |
 | **CloudWatch** | Logs, metrics, and alarms |
 | **SageMaker Model Registry** | Model version management (manual) |
 | **IAM** | Access management |
