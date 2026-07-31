@@ -14,9 +14,9 @@ pre: "<b>1.9 </b>"
 - Registered a new AWS account (free tier).
 - Repeated setup steps from Week 1:
   - Created IAM Role with necessary policies.
-  - Created a new S3 Bucket with folders `data/`, `models/`, `outputs/`.
+  - Created a new S3 Bucket with folders data/, models/, outputs/.
   - Launched SageMaker Studio and JupyterLab.
-  - Recreated `config.py` with the new bucket info.
+  - Recreated config.py with the new bucket info.
 - Re-ran all notebooks from Week 2 → 8, adjusted code to work entirely in **local mode** (no SageMaker Processing, Training, or Pipelines).
 - Verified results and ensured metrics matched the previous run:
   - Baseline accuracy: 83.80%
