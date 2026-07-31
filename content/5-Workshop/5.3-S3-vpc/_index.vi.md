@@ -32,6 +32,7 @@ pre: "<b>5.3 </b>"
 ## Bước 4: Tạo config.py
 
 Trong JupyterLab, tạo file `config.py`:
+```python
 import boto3
 import sagemaker
 
@@ -43,21 +44,22 @@ bucket = "sagemaker-ap-southeast-2-921736623375"
 print(f"Region : {region}")
 print(f"Role : {role}")
 print(f"Bucket : {bucket}")
+```
 
 Bước 5: Verify Setup
 Chạy cell sau để kiểm tra kết nối:
-python
+```python
 from config import session, role, region, bucket
 
 print(f"Region : {region}")
 print(f"Role : {role}")
 print(f"Bucket : {bucket}")
+```
 Kết quả mong đợi:
-
-text
+```python
 Region : ap-southeast-2
 Role : arn:aws:iam::921736623375:role/SageMakerExecutionRole
 Bucket : sagemaker-ap-southeast-2-921736623375
-text
+```
 
 ---
