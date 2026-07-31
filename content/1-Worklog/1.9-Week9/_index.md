@@ -8,7 +8,7 @@ pre: "<b>1.9 </b>"
 
 #### Reason
 - The old AWS account was lost (forgotten password / locked), unable to access for finalizing the report and demo.
-- Decided to create a new account and redo all steps from scratch, focusing on **not using high-quota services** (Processing Job, Training Job, Pipelines) to ensure successful execution.
+- Decided to create a new account and redo all steps from scratch, focusing on not using high-quota services (Processing Job, Training Job, Pipelines) to ensure successful execution.
 
 #### Tasks Done
 - Registered a new AWS account (free tier).
@@ -17,7 +17,7 @@ pre: "<b>1.9 </b>"
   - Created a new S3 Bucket with folders data/, models/, outputs/.
   - Launched SageMaker Studio and JupyterLab.
   - Recreated config.py with the new bucket info.
-- Re-ran all notebooks from Week 2 → 8, adjusted code to work entirely in **local mode** (no SageMaker Processing, Training, or Pipelines).
+- Re-ran all notebooks from Week 2 → 8, adjusted code to work entirely in local mode (no SageMaker Processing, Training, or Pipelines).
 - Verified results and ensured metrics matched the previous run:
   - Baseline accuracy: 83.80%
   - Best accuracy: 84.92%
