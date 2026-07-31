@@ -7,15 +7,15 @@ pre: "<b>1.3 </b>"
 ---
 
 #### Tasks Done
-- Wrote `train.py` for XGBoost with argparse for hyperparameters.
-- Due to SageMaker Training Job quota (`ml.m5.large` = 0), trained **directly in the notebook**.
+- Wrote train.py for XGBoost with argparse for hyperparameters.
+- Due to SageMaker Training Job quota (ml.m5.large = 0), trained **directly in the notebook**.
 - Baseline training with:
-  - `max_depth = 5`
-  - `n_estimators = 100`
-  - `learning_rate = 0.1`
+  - max_depth = 5
+  - n_estimators = 100
+  - learning_rate = 0.1
 - Evaluated model on test set.
-- Logged experiment to SageMaker Experiments (`titanic-training`).
-- Saved `model.joblib` to S3 (`models/`).
+- Logged experiment to SageMaker Experiments (titanic-training).
+- Saved model.joblib to S3 (models/).
 
 #### Results
 - ✅ Baseline Accuracy: **83.80%**.
