@@ -45,6 +45,7 @@ bucket = "sagemaker-ap-southeast-2-921736623375"
 print(f"Region : {region}")
 print(f"Role : {role}")
 print(f"Bucket : {bucket}")
+
 Bước 5: Verify Setup
 Chạy cell sau để kiểm tra kết nối:
 
