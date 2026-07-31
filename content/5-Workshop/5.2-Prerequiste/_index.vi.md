@@ -37,21 +37,17 @@ Tạo IAM Role với các policy sau:
 | Python | 3.12+ | Chạy code và notebook |
 | Git | Latest | Quản lý source code |
 
-## Cấu trúc thư mục
+## Cấu trúc thư mục trên S3
 
-Tạo cấu trúc thư mục sau trong S3 bucket `sagemaker-ap-southeast-2-921736623375`:
-s3://sagemaker-ap-southeast-2-921736623375/
-├── data/
-│ ├── raw/ # Dữ liệu thô
-│ └── processed/ # Dữ liệu đã xử lý
-├── models/ # Model artifacts
-├── outputs/ # Output từ các job
-├── monitoring/ # Baseline và reports
-│ ├── baseline/
-│ └── captured-data/
-├── registry/ # Model registry metadata
-└── pipeline/ # Pipeline artifacts
-
+Tạo các thư mục sau trong S3 bucket `sagemaker-ap-southeast-2-921736623375`:
+- `data/raw/` : dữ liệu thô
+- `data/processed/` : dữ liệu đã xử lý
+- `models/` : model artifacts
+- `outputs/` : output từ các job
+- `monitoring/baseline/` : baseline files
+- `monitoring/captured-data/` : data capture
+- `registry/` : model registry metadata
+- `pipeline/` : pipeline artifacts
 
 ## Lưu ý về quota
 
