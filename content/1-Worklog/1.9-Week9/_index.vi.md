@@ -14,9 +14,9 @@ pre: "<b>1.9 </b>"
 - Đăng ký tài khoản AWS mới (free tier).
 - Lặp lại các bước setup từ Tuần 1:
   - Tạo IAM Role với các policy cần thiết.
-  - Tạo S3 Bucket mới, tạo các thư mục `data/`, `models/`, `outputs/`.
+  - Tạo S3 Bucket mới, tạo các thư mục data/, models/, outputs/.
   - Khởi tạo SageMaker Studio và JupyterLab.
-  - Tạo lại file `config.py` với thông tin bucket mới.
+  - Tạo lại file config.py với thông tin bucket mới.
 - Chạy lại toàn bộ các notebook từ Tuần 2 → 8, điều chỉnh code để hoạt động hoàn toàn trong **local mode** (không dùng Processing Job, Training Job, Pipelines của SageMaker).
 - Kiểm tra lại kết quả và đảm bảo các số liệu khớp với lần chạy trước:
   - Baseline accuracy: 83.80%
