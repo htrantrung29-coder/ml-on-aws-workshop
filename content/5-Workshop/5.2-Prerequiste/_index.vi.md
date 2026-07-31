@@ -52,6 +52,7 @@ s3://sagemaker-ap-southeast-2-921736623375/
 ├── registry/ # Model registry metadata
 └── pipeline/ # Pipeline artifacts
 
+
 ## Lưu ý về quota
 
 Do tài khoản sinh viên thường bị giới hạn quota, workshop này sử dụng **local mode** (chạy trong notebook) thay vì SageMaker Processing Jobs và Training Jobs. Các bước vẫn đảm bảo tính tương đương về kết quả.
