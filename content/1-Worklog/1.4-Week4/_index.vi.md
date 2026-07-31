@@ -16,10 +16,10 @@ pre: "<b>1.4 </b>"
   - max_depth = 3
   - n_estimators = 100
   - learning_rate = 0.01
-- Huấn luyện lại với best params, đạt accuracy **84.92%**.
+- Huấn luyện lại với best params, đạt accuracy 84.92%.
 - Lưu best_model.joblib lên S3 (models/).
 - Log kết quả HPO vào SageMaker Experiments (titanic-hpo).
 
 #### Kết quả đạt được
-- ✅ Best Accuracy: **84.92%** (cải thiện +1.12% so với baseline).
+- ✅ Best Accuracy: 84.92% (cải thiện +1.12% so với baseline).
 - ✅ Đã so sánh và chọn được bộ tham số tối ưu.
