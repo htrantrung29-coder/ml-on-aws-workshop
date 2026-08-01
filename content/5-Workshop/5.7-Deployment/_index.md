@@ -117,10 +117,10 @@ def lambda_handler(event, context):
 
 Go to API Gateway Console -> Create API -> REST API.
 
-- API name: `titanic-api`.
-- Create resource `/predict` with method `POST`.
-- Integrate with Lambda function `titanic-predictor`.
-- Deploy API with stage `prod`.
+- API name: titanic-api.
+- Create resource /predict with method POST.
+- Integrate with Lambda function titanic-predictor.
+- Deploy API with stage prod.
 
 ## Step 5: Test API
 
