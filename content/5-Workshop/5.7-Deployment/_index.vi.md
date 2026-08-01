@@ -117,10 +117,10 @@ def lambda_handler(event, context):
 
 Vào API Gateway Console -> Create API -> REST API.
 
-- API name: `titanic-api`.
-- Tạo resource `/predict` với method `POST`.
-- Tích hợp với Lambda function `titanic-predictor`.
-- Deploy API với stage `prod`.
+- API name: titanic-api.
+- Tạo resource /predict với method POST.
+- Tích hợp với Lambda function titanic-predictor.
+- Deploy API với stage prod.
 
 ## Bước 5: Test API
 
