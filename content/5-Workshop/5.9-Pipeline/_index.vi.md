@@ -127,5 +127,5 @@ print(f"Accuracy: {result['accuracy']:.4f}")
 ## Kết quả
 
 - Pipeline chạy tự động hoàn chỉnh
-- Accuracy: **84.92%**
-- Model artifact: `s3://sagemaker-ap-southeast-2-921736623375/pipeline/models/model.tar.gz`
+- Accuracy: 84.92%
+- Model artifact: s3://sagemaker-ap-southeast-2-921736623375/pipeline/models/model.tar.gz
