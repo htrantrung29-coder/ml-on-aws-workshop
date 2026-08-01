@@ -144,8 +144,8 @@ Sự kiện là buổi tổng kết và trình diễn các dự án trong khuôn
 
 ## Hình ảnh sự kiện
 
-![Event Photo 1](/images/event1.webp)
-![Event Photo 2](/images/event2.webp)
+![Event Photo 1](/images/event1.png)
+![Event Photo 2](/images/event2.png)
 
 ---
 
