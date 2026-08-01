@@ -8,30 +8,30 @@ pre: "<b>5.3 </b>"
 
 ## Bước 1: Tạo IAM Role
 
-1. Truy cập **IAM Console** → **Roles** → **Create role**.
-2. Chọn **AWS service** → **SageMaker** → **SageMaker - Execution**.
-3. Attach các policy: `AmazonSageMakerFullAccess`, `AmazonS3FullAccess`, `CloudWatchFullAccess`.
-4. Đặt tên role: `SageMakerExecutionRole`.
-5. Click **Create role**.
+1. Truy cập IAM Console → Roles → Create role.
+2. Chọn AWS service → SageMaker → SageMaker - Execution.
+3. Attach các policy: AmazonSageMakerFullAccess, AmazonS3FullAccess, CloudWatchFullAccess.
+4. Đặt tên role: SageMakerExecutionRole.
+5. Click Create role.
 
 ## Bước 2: Tạo S3 Bucket
 
-1. Truy cập **S3 Console** → **Create bucket**.
+1. Truy cập S3 Console → Create bucket.
 2. Điền thông tin:
-   - Bucket name: `sagemaker-ap-southeast-2-921736623375`
-   - Region: `ap-southeast-2`
-3. Tạo các thư mục: `data/`, `models/`, `outputs/`, `monitoring/`, `registry/`, `pipeline/`.
+   - Bucket name: sagemaker-ap-southeast-2-921736623375
+   - Region: ap-southeast-2
+3. Tạo các thư mục: data/, models/, outputs/, monitoring/, registry/, pipeline/.
 
 ## Bước 3: Khởi tạo SageMaker Studio
 
-1. Truy cập **SageMaker Console** → **Studio**.
-2. Click **Set up for single user (Quick setup)**.
-3. Chọn **Execution role** là `SageMakerExecutionRole`.
-4. Click **Submit** và đợi 3-5 phút.
+1. Truy cập SageMaker Console → Studio.
+2. Click Set up for single user (Quick setup).
+3. Chọn Execution role là SageMakerExecutionRole.
+4. Click Submit và đợi 3-5 phút.
 
 ## Bước 4: Tạo config.py
 
-Trong JupyterLab, tạo file `config.py`:
+Trong JupyterLab, tạo file config.py:
 ```python
 import boto3
 import sagemaker
