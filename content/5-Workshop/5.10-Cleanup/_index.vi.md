@@ -8,7 +8,7 @@ pre: "<b>5.10 </b>"
 
 ## Quan trọng
 
-Xóa các resource sau khi demo để **tránh phát sinh chi phí**.
+Xóa các resource sau khi demo để tránh phát sinh chi phí.
 
 ## Bước 1: Xóa Monitoring Schedule
 
@@ -45,8 +45,8 @@ except Exception as e:
 
 ## Bước 3: Xóa Lambda & API Gateway
 
-- Vào **Lambda Console** → chọn **titanic-predictor** → **Delete**.
-- Vào **API Gateway Console** → chọn **titanic-api** → **Delete**.
+- Vào Lambda Console → chọn titanic-predictor → Delete.
+- Vào API Gateway Console → chọn titanic-api → Delete.
 
 ## Bước 4: Xóa S3 (tùy chọn)
 
@@ -61,4 +61,4 @@ aws s3 rb s3://sagemaker-ap-southeast-2-921736623375
 |----------|------------:|----------:|
 | SageMaker Endpoint (ml.t2.medium) | $0.065 | $0.065/giờ |
 | SageMaker Studio | $0.044 | $0.044/giờ |
-| **Tổng** | **~$0.11/giờ** | **~$2.64/ngày** |
+| Tổng | ~$0.11/giờ | ~$2.64/ngày |
