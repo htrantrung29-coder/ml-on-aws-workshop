@@ -127,6 +127,6 @@ print("Monitoring Schedule created!")
 ## Results
 
 - CloudWatch Alarms: OK
-- Baseline files: `statistics.json`, `constraints.json`
+- Baseline files: statistics.json, constraints.json
 - Monitoring Schedule: runs hourly
 - Data Capture: 100% requests captured
