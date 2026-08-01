@@ -11,7 +11,7 @@ pre: "<b>5.4 </b>"
 Sử dụng dataset Titanic từ Kaggle:
 - 891 hành khách
 - 12 features
-- Target: `Survived` (0/1)
+- Target: Survived (0/1)
 
 ## Bước 1: Tải và khám phá dữ liệu
 
