@@ -8,7 +8,7 @@ pre: "<b>5.10 </b>"
 
 ## Important
 
-Delete resources after the demo to **avoid unexpected costs**.
+Delete resources after the demo to avoid unexpected costs.
 
 ## Step 1: Delete Monitoring Schedule
 
@@ -45,8 +45,8 @@ except Exception as e:
 
 ## Step 3: Delete Lambda & API Gateway
 
-- Go to **Lambda Console** → select **titanic-predictor** → **Delete**.
-- Go to **API Gateway Console** → select **titanic-api** → **Delete**.
+- Go to Lambda Console → select titanic-predictor → Delete.
+- Go to API Gateway Console → select titanic-api → Delete.
 
 ## Step 4: Delete S3 (Optional)
 
@@ -61,4 +61,4 @@ aws s3 rb s3://sagemaker-ap-southeast-2-921736623375
 |----------|----------:|---------:|
 | SageMaker Endpoint (ml.t2.medium) | $0.065 | $0.065/hour |
 | SageMaker Studio | $0.044 | $0.044/hour |
-| **Total** | **~$0.11/hour** | **~$2.64/day** |
+| Total | ~$0.11/hour | ~$2.64/day |
