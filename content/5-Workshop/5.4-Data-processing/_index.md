@@ -11,7 +11,7 @@ pre: "<b>5.4 </b>"
 Using the Titanic dataset from Kaggle:
 - 891 passengers
 - 12 features
-- Target: `Survived` (0/1)
+- Target: Survived (0/1)
 
 ## Step 1: Load and explore data
 
