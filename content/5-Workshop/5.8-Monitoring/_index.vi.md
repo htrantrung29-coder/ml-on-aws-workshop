@@ -127,6 +127,6 @@ print("Monitoring Schedule đã tạo!")
 ## Kết quả
 
 - CloudWatch Alarms: OK
-- Baseline files: `statistics.json`, `constraints.json`
+- Baseline files: statistics.json, constraints.json
 - Monitoring Schedule: chạy mỗi giờ
 - Data Capture: 100% requests được capture
