@@ -12,10 +12,10 @@ Using XGBoost with default parameters:
 
 | Parameter | Value |
 |-----------|-------|
-| `max_depth` | 5 |
-| `n_estimators` | 100 |
-| `learning_rate` | 0.1 |
-| `eval_metric` | logloss |
+| max_depth | 5 |
+| n_estimators | 100 |
+| learning_rate | 0.1 |
+| eval_metric | logloss |
 
 ## Training Code
 
