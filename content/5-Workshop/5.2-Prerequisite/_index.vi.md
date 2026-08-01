@@ -9,7 +9,7 @@ pre: "<b>5.2 </b>"
 ## Tài khoản AWS
 
 - Tài khoản AWS (có thể sử dụng Free Tier hoặc tài khoản sinh viên).
-- Region: `ap-southeast-2` (Sydney).
+- Region: ap-southeast-2 (Sydney).
 
 ## Quyền IAM tối thiểu
 
@@ -17,11 +17,11 @@ Tạo IAM Role với các policy sau:
 
 | Policy | Mục đích |
 |--------|---------|
-| `AmazonSageMakerFullAccess` | Quyền đầy đủ trên SageMaker |
-| `AmazonS3FullAccess` | Đọc/ghi trên S3 |
-| `CloudWatchFullAccess` | Ghi logs và metrics |
-| `AWSLambdaFullAccess` | Tạo và quản lý Lambda |
-| `AmazonAPIGatewayAdministrator` | Quản lý API Gateway |
+| AmazonSageMakerFullAccess | Quyền đầy đủ trên SageMaker |
+| AmazonS3FullAccess | Đọc/ghi trên S3 |
+| CloudWatchFullAccess | Ghi logs và metrics |
+| AWSLambdaFullAccess | Tạo và quản lý Lambda |
+| AmazonAPIGatewayAdministrator | Quản lý API Gateway |
 
 ## Kiến thức cần có
 
@@ -39,16 +39,16 @@ Tạo IAM Role với các policy sau:
 
 ## Cấu trúc thư mục trên S3
 
-Tạo các thư mục sau trong S3 bucket `sagemaker-ap-southeast-2-921736623375`:
-- `data/raw/` : dữ liệu thô
-- `data/processed/` : dữ liệu đã xử lý
-- `models/` : model artifacts
-- `outputs/` : output từ các job
-- `monitoring/baseline/` : baseline files
-- `monitoring/captured-data/` : data capture
-- `registry/` : model registry metadata
-- `pipeline/` : pipeline artifacts
+Tạo các thư mục sau trong S3 bucket sagemaker-ap-southeast-2-921736623375:
+- data/raw/ : dữ liệu thô
+- data/processed/ : dữ liệu đã xử lý
+- models/ : model artifacts
+- outputs/ : output từ các job
+- monitoring/baseline/ : baseline files
+- monitoring/captured-data/ : data capture
+- registry/ : model registry metadata
+- pipeline/ : pipeline artifacts
 
 ## Lưu ý về quota
 
-Do tài khoản sinh viên thường bị giới hạn quota, workshop này sử dụng **local mode** (chạy trong notebook) thay vì SageMaker Processing Jobs và Training Jobs. Các bước vẫn đảm bảo tính tương đương về kết quả.
+Do tài khoản sinh viên thường bị giới hạn quota, workshop này sử dụng local mode (chạy trong notebook) thay vì SageMaker Processing Jobs và Training Jobs. Các bước vẫn đảm bảo tính tương đương về kết quả.
