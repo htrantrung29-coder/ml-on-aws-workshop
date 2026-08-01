@@ -12,10 +12,10 @@ Sử dụng XGBoost với tham số mặc định:
 
 | Tham số | Giá trị |
 |---------|---------|
-| `max_depth` | 5 |
-| `n_estimators` | 100 |
-| `learning_rate` | 0.1 |
-| `eval_metric` | logloss |
+| max_depth | 5 |
+| n_estimators | 100 |
+| learning_rate | 0.1 |
+| eval_metric | logloss |
 
 ## Code huấn luyện
 
