@@ -37,27 +37,7 @@ Building an end-to-end Machine Learning system on AWS using Amazon SageMaker as 
 
 ## 4. Solution Architecture
 
-```text
-┌─────────────────────────────────────────────┐
-│ DATA LAYER                                  │
-│ S3 (raw) → Processing → S3 (processed)      │
-└─────────────────┬───────────────────────────┘
-                  ↓
-┌─────────────────────────────────────────────┐
-│ TRAINING LAYER                              │
-│ Training → Experiments → HPO → Registry     │
-└─────────────────┬───────────────────────────┘
-                  ↓
-┌─────────────────────────────────────────────┐
-│ INFERENCE LAYER                             │
-│ Endpoint → Lambda → API Gateway → Client    │
-└─────────────────┬───────────────────────────┘
-                  ↓
-┌─────────────────────────────────────────────┐
-│ MONITORING LAYER                            │
-│ CloudWatch Alarms + SageMaker Model Monitor │
-└─────────────────────────────────────────────┘
-```
+![System Architecture](/images/architecture-diagram.png)
 
 ## 5. Timeline
 
