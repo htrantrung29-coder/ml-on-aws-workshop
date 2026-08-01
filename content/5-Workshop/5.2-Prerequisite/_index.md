@@ -9,7 +9,7 @@ pre: "<b>5.2 </b>"
 ## AWS Account
 
 - AWS account (Free Tier or student account is acceptable).
-- Region: `ap-southeast-2` (Sydney).
+- Region: ap-southeast-2 (Sydney).
 
 ## Minimum IAM Permissions
 
@@ -17,11 +17,11 @@ Create an IAM Role with the following policies:
 
 | Policy | Purpose |
 |--------|---------|
-| `AmazonSageMakerFullAccess` | Full SageMaker access |
-| `AmazonS3FullAccess` | Read/write S3 |
-| `CloudWatchFullAccess` | Write logs and metrics |
-| `AWSLambdaFullAccess` | Create and manage Lambda |
-| `AmazonAPIGatewayAdministrator` | Manage API Gateway |
+| AmazonSageMakerFullAccess | Full SageMaker access |
+| AmazonS3FullAccess | Read/write S3 |
+| CloudWatchFullAccess | Write logs and metrics |
+| AWSLambdaFullAccess | Create and manage Lambda |
+| AmazonAPIGatewayAdministrator | Manage API Gateway |
 
 ## Required Knowledge
 
@@ -39,16 +39,16 @@ Create an IAM Role with the following policies:
 
 ## S3 Folder Structure
 
-Create the following folders in S3 bucket `sagemaker-ap-southeast-2-921736623375`:
-- `data/raw/` : raw data
-- `data/processed/` : processed data
-- `models/` : model artifacts
-- `outputs/` : job outputs
-- `monitoring/baseline/` : baseline files
-- `monitoring/captured-data/` : data capture
-- `registry/` : model registry metadata
-- `pipeline/` : pipeline artifacts
+Create the following folders in S3 bucket sagemaker-ap-southeast-2-921736623375:
+- data/raw/ : raw data
+- data/processed/ : processed data
+- models/ : model artifacts
+- outputs/ : job outputs
+- monitoring/baseline/ : baseline files
+- monitoring/captured-data/ : data capture
+- registry/ : model registry metadata
+- pipeline/ : pipeline artifacts
 
 ## Quota Considerations
 
-Due to student account quota limits, this workshop uses **local mode** (running in notebook) instead of SageMaker Processing Jobs and Training Jobs. The results remain equivalent.
+Due to student account quota limits, this workshop uses local mode (running in notebook) instead of SageMaker Processing Jobs and Training Jobs. The results remain equivalent.
