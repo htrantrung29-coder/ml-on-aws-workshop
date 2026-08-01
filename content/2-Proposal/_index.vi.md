@@ -43,31 +43,7 @@ Xây dựng hệ thống Machine Learning end-to-end trên AWS sử dụng Amazo
 
 ## 4. Kiến trúc giải pháp
 
-```text
-┌──────────────────────────────────────────────┐
-│                  DATA LAYER                  │
-│      S3 (Raw) → Processing → S3 (Processed)  │
-└────────────────────┬─────────────────────────┘
-                     │
-                     ▼
-┌──────────────────────────────────────────────┐
-│               TRAINING LAYER                 │
-│ Training → Experiments → HPO → Registry      │
-└────────────────────┬─────────────────────────┘
-                     │
-                     ▼
-┌──────────────────────────────────────────────┐
-│              INFERENCE LAYER                 │
-│ Endpoint → Lambda → API Gateway → Client     │
-└────────────────────┬─────────────────────────┘
-                     │
-                     ▼
-┌──────────────────────────────────────────────┐
-│             MONITORING LAYER                 │
-│ CloudWatch + SageMaker Model Monitor         │
-└──────────────────────────────────────────────┘
-```
-
+![Kiến trúc hệ thống](/images/architecture-diagram.png)
 ---
 
 ## 5. Timeline
