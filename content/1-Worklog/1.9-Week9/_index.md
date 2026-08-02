@@ -7,7 +7,7 @@ pre: "<b>1.9 </b>"
 ---
 
 #### Reason
-- The old AWS account was lost (forgotten password / locked), unable to access for finalizing the report and demo.
+- The old AWS account was lost (locked), unable to access for finalizing the report and demo.
 - Decided to create a new account and redo all steps from scratch, focusing on not using high-quota services (Processing Job, Training Job, Pipelines) to ensure successful execution.
 
 #### Tasks Done
