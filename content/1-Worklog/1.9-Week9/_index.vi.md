@@ -7,7 +7,7 @@ pre: "<b>1.9 </b>"
 ---
 
 #### Lý do
-- Tài khoản AWS cũ bị mất (quên mật khẩu / bị khóa), không thể truy cập để hoàn thiện báo cáo và demo.
+- Tài khoản AWS cũ bị mất (bị khóa), không thể truy cập để hoàn thiện báo cáo và demo.
 - Quyết định tạo một tài khoản mới và làm lại toàn bộ các bước từ đầu, tập trung vào việc không sử dụng các dịch vụ yêu cầu quota cao (Processing Job, Training Job, Pipelines) để đảm bảo có thể chạy thành công.
 
 #### Công việc đã làm
