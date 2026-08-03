@@ -43,7 +43,8 @@ Xây dựng hệ thống Machine Learning end-to-end trên AWS sử dụng Amazo
 
 ## 4. Kiến trúc giải pháp
 
-![Kiến trúc hệ thống](../../images/architecture-diagram.png)
+![Kiến trúc hệ thống](https://htrantrung29-coder.github.io/ml-on-aws-workshop/images/architecture-diagram.png)
+
 
 ---
 

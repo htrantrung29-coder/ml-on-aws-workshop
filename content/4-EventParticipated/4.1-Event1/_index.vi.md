@@ -144,8 +144,8 @@ Sự kiện là buổi tổng kết và trình diễn các dự án trong khuôn
 
 ## Hình ảnh sự kiện
 
-![Event Photo 1](/images/event1.png)
-![Event Photo 2](/images/event2.png)
+![Event Photo 1](https://htrantrung29-coder.github.io/ml-on-aws-workshop/images/event1.png)
+![Event Photo 2](https://htrantrung29-coder.github.io/ml-on-aws-workshop/images/event2.png)
 
 ---
 

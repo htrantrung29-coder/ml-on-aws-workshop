@@ -37,7 +37,8 @@ Building an end-to-end Machine Learning system on AWS using Amazon SageMaker as 
 
 ## 4. Solution Architecture
 
-![System Architecture](/images/architecture-diagram.png)
+![System Architecture](https://htrantrung29-coder.github.io/ml-on-aws-workshop/images/architecture-diagram.png)
+
 
 ## 5. Timeline
 
